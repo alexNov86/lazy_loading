@@ -4,9 +4,119 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Lazy loading</title>
   </head>
   <body>
-    <h1>Lazy loading</h1>
+    <div class="wrapper">
+      <div class="page__container">
+        <div class="page__section page__section_1">
+          <h1 class="page__title">Заголовок</h1>
+          <div class="page__text">
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, modi dolore illum nobis beatae eligendi iste aperiam voluptatibus voluptas,
+              nulla mollitia! Odio fugit totam laudantium autem architecto voluptates itaque eligendi.
+            </p>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, modi dolore illum nobis beatae eligendi iste aperiam voluptatibus voluptas,
+              nulla mollitia! Odio fugit totam laudantium autem architecto voluptates itaque eligendi.
+            </p>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, modi dolore illum nobis beatae eligendi iste aperiam voluptatibus voluptas,
+              nulla mollitia! Odio fugit totam laudantium autem architecto voluptates itaque eligendi.
+            </p>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, modi dolore illum nobis beatae eligendi iste aperiam voluptatibus voluptas,
+              nulla mollitia! Odio fugit totam laudantium autem architecto voluptates itaque eligendi.
+            </p>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, modi dolore illum nobis beatae eligendi iste aperiam voluptatibus voluptas,
+              nulla mollitia! Odio fugit totam laudantium autem architecto voluptates itaque eligendi.
+            </p>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, modi dolore illum nobis beatae eligendi iste aperiam voluptatibus voluptas,
+              nulla mollitia! Odio fugit totam laudantium autem architecto voluptates itaque eligendi.
+            </p>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, modi dolore illum nobis beatae eligendi iste aperiam voluptatibus voluptas,
+              nulla mollitia! Odio fugit totam laudantium autem architecto voluptates itaque eligendi.
+            </p>
+          </div>
+        </div>
+        <div class="page__section page__section_2">
+          <h2 class="page__sub-title">Подзаголовок</h2>
+          <div class="page__images">
+            <div class="page__image">
+              <img data-src="https://source.unsplash.com/random/200x200" alt="Картинка" />
+            </div>
+            <div class="page__image">
+              <img src="https://source.unsplash.com/random/200x200" alt="Картинка" />
+            </div>
+            <div class="page__image">
+              <img src="https://source.unsplash.com/random/200x200" alt="Картинка" />
+            </div>
+            <div class="page__image">
+              <img src="https://source.unsplash.com/random/200x200" alt="Картинка" />
+            </div>
+            <div class="page__image">
+              <img src="https://source.unsplash.com/random/200x200" alt="Картинка" />
+            </div>
+            <div class="page__image">
+              <img src="https://source.unsplash.com/random/200x200" alt="Картинка" />
+            </div>
+          </div>
+        </div>
+        <div class="page__section page__section_3">
+          <h2 class="page__sub-title">Подзаголовок</h2>
+          <div class="page__map _load-map">
+            <iframe
+              width="600"
+              height="450"
+              style="border: 0"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed/v1/place?key=API_KEY
+              &q=Space+Needle,Seattle+WA"
+              >></iframe
+            >
+          </div>
+        </div>
+        <div class="page__section page__section_1">
+          <h1 class="page__title">Подзаголовок</h1>
+          <div class="page__text _load-more">
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, modi dolore illum nobis beatae eligendi iste aperiam voluptatibus voluptas,
+              nulla mollitia! Odio fugit totam laudantium autem architecto voluptates itaque eligendi.
+            </p>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, modi dolore illum nobis beatae eligendi iste aperiam voluptatibus voluptas,
+              nulla mollitia! Odio fugit totam laudantium autem architecto voluptates itaque eligendi.
+            </p>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, modi dolore illum nobis beatae eligendi iste aperiam voluptatibus voluptas,
+              nulla mollitia! Odio fugit totam laudantium autem architecto voluptates itaque eligendi.
+            </p>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, modi dolore illum nobis beatae eligendi iste aperiam voluptatibus voluptas,
+              nulla mollitia! Odio fugit totam laudantium autem architecto voluptates itaque eligendi.
+            </p>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, modi dolore illum nobis beatae eligendi iste aperiam voluptatibus voluptas,
+              nulla mollitia! Odio fugit totam laudantium autem architecto voluptates itaque eligendi.
+            </p>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, modi dolore illum nobis beatae eligendi iste aperiam voluptatibus voluptas,
+              nulla mollitia! Odio fugit totam laudantium autem architecto voluptates itaque eligendi.
+            </p>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, modi dolore illum nobis beatae eligendi iste aperiam voluptatibus voluptas,
+              nulla mollitia! Odio fugit totam laudantium autem architecto voluptates itaque eligendi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
   </body>
 </html>
