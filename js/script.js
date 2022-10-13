@@ -1,10 +1,9 @@
 "use strict";
 
 const lazyImages = document.querySelectorAll("img[data-src]");
-
 const loadMapBlock = document.querySelector("._load-map");
-
 const windowHeight = document.documentElement.clientHeight;
+const loadMoreBlock = document.querySelector("._load-more");
 
 let lazyImagesPositions = [];
 
@@ -23,6 +22,12 @@ function lazyScroll() {
   if (document.querySelectorAll("img[data-src]").length > 0) {
     lazyScrollCheck();
   }
+  if (!loadMapBlock.classList.contains("_loaded")) {
+    getMap();
+  }
+  if (!loadMoreBlock.classList.contains("_loading")) {
+    loadMore();
+  }
 }
 
 function lazyScrollCheck() {
@@ -38,4 +43,42 @@ function lazyScrollCheck() {
 
 function getMap() {
   const loadMapBlockPos = loadMapBlock.getBoundingClientRect().top + window.pageYOffset;
+  if (window.pageYOffset > loadMapBlockPos - windowHeight) {
+    const loadMapUrl = loadMapBlock.dataset.map;
+    if (loadMapUrl) {
+      loadMapBlock.insertAdjacentHTML("beforeend", `<iframe src="${loadMapUrl}" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`);
+      loadMapBlock.classList.add("_loaded");
+    }
+  }
+}
+
+function loadMore() {
+  const loadMoreBlockPos = loadMoreBlock.getBoundingClientRect().top + window.pageYOffset;
+  const loadMoreBlockHeight = loadMoreBlock.offsetHeight;
+
+  if (window.pageYOffset > loadMoreBlockPos + loadMoreBlockHeight - windowHeight) {
+    getContent();
+  }
+}
+
+async function getContent() {
+  if (!document.querySelector("._loading-icon")) {
+    loadMoreBlock.insertAdjacentHTML("beforeend", `<div class="_loading-icon"></div>`);
+  }
+  loadMoreBlock.classList.add("_loading");
+
+  let response = await fetch("_more.html", {
+    method: "GET",
+  });
+
+  if (response.ok) {
+    let result = await response.text();
+    loadMoreBlock.insertAdjacentHTML("beforeend", result);
+    loadMoreBlock.classList.remove("_loading");
+    if (document.querySelector("._loading-icon")) {
+      document.querySelector("._loading-icon").remove();
+    }
+  } else {
+    alert("Ошибка");
+  }
 }
