@@ -67,7 +67,7 @@ async function getContent() {
   }
   loadMoreBlock.classList.add("_loading");
 
-  let response = await fetch("../_more.html", {
+  let response = await fetch("../tpl/_more.html", {
     method: "GET",
   });
 
