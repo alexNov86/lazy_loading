@@ -67,18 +67,29 @@ async function getContent() {
   }
   loadMoreBlock.classList.add("_loading");
 
-  let response = await fetch("../tpl/_more.html", {
-    method: "GET",
-  });
+  let resultText = `<p>
+    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorum, modi dolore illum nobis beatae eligendi iste aperiam voluptatibus voluptas,
+    nulla mollitia! Odio fugit totam laudantium autem architecto voluptates itaque eligendi.
+  </p>`;
 
-  if (response.ok) {
-    let result = await response.text();
-    loadMoreBlock.insertAdjacentHTML("beforeend", result);
-    loadMoreBlock.classList.remove("_loading");
-    if (document.querySelector("._loading-icon")) {
-      document.querySelector("._loading-icon").remove();
-    }
-  } else {
-    alert("Ошибка");
+  loadMoreBlock.insertAdjacentHTML("beforeend", resultText);
+  loadMoreBlock.classList.remove("_loading");
+  if (document.querySelector("._loading-icon")) {
+    document.querySelector("._loading-icon").remove();
   }
+
+  // let response = await fetch("../tpl/_more.html", {
+  //   method: "GET",
+  // });
+
+  // if (response.ok) {
+  //   let result = await response.text();
+  //   loadMoreBlock.insertAdjacentHTML("beforeend", result);
+  //   loadMoreBlock.classList.remove("_loading");
+  //   if (document.querySelector("._loading-icon")) {
+  //     document.querySelector("._loading-icon").remove();
+  //   }
+  // } else {
+  //   alert("Ошибка");
+  // }
 }
